@@ -17,7 +17,7 @@ for idx, dof in enumerate(dofs):
     row = idx // 3
     col = idx % 3
     ax = axes[row, col]
-
+ 
     # 模擬卡方資料
     sum_chisqr = np.zeros(500)
     for _ in range(dof):
