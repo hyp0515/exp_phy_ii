@@ -7,7 +7,7 @@ np.random.seed(0)
 
 # 設定自由度範圍
 dofs = range(2, 11)
-
+ 
 # 建立subplots 3*3
 fig, axes = plt.subplots(3, 3, figsize=(15, 12), sharex=True, sharey=True)
 x_vals = np.linspace(0, 30, 1000)
