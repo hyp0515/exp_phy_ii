@@ -5,6 +5,30 @@ from scipy.stats import chi2
 # 固定隨機數種子
 np.random.seed(0)
 
+data = np.random.normal(0, 1, 500)
+ 
+#計算每個點的卡方值(自由度=1)
+chisqr = (data - 0)**2 / 1  # μ=0, σ=1
+
+#畫直方圖
+plt.figure(figsize=(10, 6))
+plt.hist(chisqr, bins=50, density=True, alpha=0.6, label='Simulated Data')
+
+#畫理論自由度1的卡方分布
+x_vals = np.linspace(0, 10, 500)
+plt.plot(x_vals, chi2.pdf(x_vals, df=1), label='Chi-square Distribution (df=1)', color='red')
+
+plt.xlabel('Chi-square value')
+plt.ylabel('Probability Density')
+plt.title('Chi-square Distribution (df=1)')
+plt.legend()
+plt.savefig('./fig/chi_square_dof1.pdf', transparent=True)
+plt.close('all')
+# plt.grid(True)
+# plt.show()
+
+
+
 # 設定自由度範圍
 dofs = range(2, 11)
  
